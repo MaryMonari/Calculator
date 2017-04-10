@@ -1,36 +1,27 @@
-// Adding Function
-var add= function(number1, number2){
+//Business (Back-End) logic:
+var add = function(number1, number2){
   return number1 + number2;
-}
+};
 
-// Collecting input from user
-var number1 =parseInt(prompt("aEnter a number:"));
-var number2 =parseInt(prompt("Enter another number:"));
-alert(add(number1, number2));
-
-//Subtracting function
-var subtract= function(number1, number2){
+var subtract = function(number1, number2){
   return number1 - number2;
-}
+};
 
-var number1 =parseInt(prompt("sEnter a number:"));
-var number2 =parseInt(prompt("Enter another number:"));
-alert(subtract(number1, number2));
-
-//Multiplying function
-var multiply= function(number1, number2){
+var multiply = function(number1, number2){
   return number1 * number2;
-}
+};
 
-var number1 =parseInt(prompt("mEnter a number:"));
-var number2 =parseInt(prompt("Enter another number:"));
-alert(multiply(number1, number2));
-
-//Dividing function
-var divide= function(number1, number2){
+var divide = function(number1, number2){
   return number1 / number2;
-}
+};
 
-var number1 =parseInt(prompt("sEnter a number:"));
-var number2 =parseInt(prompt("Enter another number:"));
-alert(divide(number1, number2));
+//User interface (Front-end) logic:
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+       event.preventDefault();
+       var number1 = parseInt($("#add1").val());
+       var number2 = parseInt($("#add2").val());
+       var result = add(number1, number2);
+       $("#output").text(result);
+     });
+  });
